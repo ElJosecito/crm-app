@@ -2,7 +2,7 @@ import React from "react";
 
 //font awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faHome } from "@fortawesome/free-solid-svg-icons";
 
 //components
 import Options from "./cards/Options";
@@ -22,6 +22,11 @@ function Header() {
         </a>
 
         <div className="flex items-center">
+          <a href="/">
+          <div className="flex items-center border-4 border-white p-3 rounded-full cursor-pointer mr-5">
+            <FontAwesomeIcon icon={faHome} className="text-lg text-white" />
+          </div>
+          </a>
           <div className="flex items-center border-4 border-white p-3 rounded-full cursor-pointer" onClick={openDrawer}>
             <FontAwesomeIcon icon={faPlus} className="text-lg text-white" />
           </div>
