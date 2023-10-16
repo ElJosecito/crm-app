@@ -1,6 +1,6 @@
 export const config = {
     appConfig : {
-        port: 3000,
+        port: 8080,
         host: 'http://localhost'
     }
 }
