@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 //components
 import { Voter } from "./cards/Voter";
 import SeeInfo from "./cards/SeeInfo";
+import NoFound from "./cards/NoFound";
 //config
 import { config } from "../../config";
 //axios
@@ -28,13 +29,19 @@ function Home() {
         console.log(res.data.data);
       } else {
         const filter = res.data.data.filter((voter) => {
-          return (
+          
+          const a = (
             voter.firstName.toLowerCase().includes(params.toLowerCase()) ||
             voter.lastName.toLowerCase().includes(params.toLowerCase()) ||
             voter.colegio.mesa.toLowerCase().includes(params.toLowerCase()) ||
             voter.phone.includes(params) ||
             voter.identification.includes(params)
+            
           );
+
+          console.log(a);
+
+          return a;
         });
         setVoters(filter);
       }
@@ -117,11 +124,7 @@ function Home() {
                 )
               )
             ) : (
-              <div className="w-full h-[50px] flex justify-center items-center bg-[#009EFF] rounded-md">
-                <h2 className="text-white text-lg font-bold">
-                  No hay votantes
-                </h2>
-              </div>
+              <NoFound prop="votantes" />
             )}
           </div>
         </div>

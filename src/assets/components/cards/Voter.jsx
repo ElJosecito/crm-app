@@ -177,13 +177,13 @@ export function Voter({
         {/* Botones */}
         <div className="flex w-60 justify-center ">
           <div
-            className=" h-[50px] w-[50px] rounded-full font-bold text-white text-sm bg-[#01A578] mx-3 flex justify-center items-center"
+            className=" h-[50px] w-[50px] rounded-full font-bold text-white text-sm bg-[#01A578] mx-3 flex justify-center items-center cursor-pointer"
             onClick={makeVoterTrue}
           >
             <FontAwesomeIcon icon={faPlus} className="text-xl" />
           </div>
           <div
-            className=" h-[50px] w-[50px] rounded-full font-bold text-white text-sm bg-[#009EFF] mx-3 flex justify-center items-center"
+            className=" h-[50px] w-[50px] rounded-full font-bold text-white text-sm bg-[#009EFF] mx-3 flex justify-center items-center cursor-pointer"
             onClick={setLocalStorage}
           >
             <FontAwesomeIcon icon={faEye} className="text-xl" />
@@ -356,13 +356,13 @@ export function UnVoteVoter({
         {/* Botones */}
         <div className="flex w-60 justify-center ">
           <div
-            className=" h-[50px] w-[50px] rounded-full font-bold text-white text-sm bg-[#FF7F37] mx-3 flex justify-center items-center"
+            className=" h-[50px] w-[50px] rounded-full font-bold text-white text-sm bg-[#FF7F37] mx-3 flex justify-center items-center cursor-pointer"
             onClick={makeVoterFalse}
           >
             <FontAwesomeIcon icon={faMinus} className="text-xl" />
           </div>
           <div
-            className=" h-[50px] w-[50px] rounded-full font-bold text-white text-sm bg-[#009EFF] mx-3 flex justify-center items-center"
+            className=" h-[50px] w-[50px] rounded-full font-bold text-white text-sm bg-[#009EFF] mx-3 flex justify-center items-center cursor-pointer"
             onClick={setLocalStorage}
           >
             <FontAwesomeIcon icon={faEye} className="text-xl" />
@@ -535,13 +535,13 @@ export function DeleteVoter({
         {/* Botones */}
         <div className="flex w-60 justify-center ">
           <div
-            className=" h-[50px] w-[50px] rounded-full font-bold text-white text-sm bg-[#ff3737] mx-3 flex justify-center items-center"
+            className=" h-[50px] w-[50px] rounded-full font-bold text-white text-sm bg-[#ff3737] mx-3 flex justify-center items-center cursor-pointer"
             onClick={deleteVoter}
           >
             <FontAwesomeIcon icon={faTrashAlt} className="text-xl" />
           </div>
           <div
-            className=" h-[50px] w-[50px] rounded-full font-bold text-white text-sm bg-[#009EFF] mx-3 flex justify-center items-center"
+            className=" h-[50px] w-[50px] rounded-full font-bold text-white text-sm bg-[#009EFF] mx-3 flex justify-center items-center cursor-pointer"
             onClick={setLocalStorage}
           >
             <FontAwesomeIcon icon={faEye} className="text-xl" />

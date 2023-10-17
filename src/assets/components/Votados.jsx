@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 //components
 import {UnVoteVoter} from "./cards/Voter";
 import SeeInfo from "./cards/SeeInfo";
+import NoFound from "./cards/NoFound";
+
 //config
 import {config} from "../../config";
 //axios
@@ -113,11 +115,7 @@ function Votados() {
                 ) : null 
               )
             ) : (
-              <div className="w-full h-[50px] flex justify-center items-center bg-[#009EFF] rounded-md">
-                <h2 className="text-white text-lg font-bold">
-                  No hay votantes
-                </h2>
-              </div>
+              <NoFound prop="votantes"/>
             )}
           </div>
         </div>

@@ -9,6 +9,7 @@ import axios from "axios";
 
 //components
 import Coordinator from "../cards/Coordinator";
+import NoFound from "../cards/NoFound";
 
 
 function DelCoordinator() {
@@ -81,11 +82,7 @@ function DelCoordinator() {
                   <Coordinator key={index} id={coordinators._id} firstName={coordinators.firstName} lastName={coordinators.lastName} phone={coordinators.phone} getCoordinator={getCoordinator}/>
               )
             ) : (
-              <div className="w-full h-[50px] flex justify-center items-center bg-[#009EFF] rounded-md">
-                <h2 className="text-white text-lg font-bold">
-                  No hay votantes
-                </h2>
-              </div>
+              <NoFound prop={"coordinadores"} />
             )}
           </div>
         </div>

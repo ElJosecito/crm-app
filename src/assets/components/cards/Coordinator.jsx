@@ -48,7 +48,7 @@ function Coordinator({ firstName, lastName, phone, id, getCoordinator }) {
         {/* Botones */}
         <div className="flex ">
           <div
-            className=" h-[50px] w-[50px] rounded-full font-bold text-white text-sm bg-[#ff3737] mx-7 flex justify-center items-center"
+            className=" h-[50px] w-[50px] rounded-full font-bold text-white text-sm bg-[#ff3737] mx-7 flex justify-center items-center cursor-pointer"
             onClick={deleteCoordinator}
           >
             <FontAwesomeIcon icon={faTrashAlt} className="text-xl" />

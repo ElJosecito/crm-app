@@ -49,7 +49,7 @@ function School({name, mesa, id, getSchool}) {
         {/* Botones */}
         <div className="flex ">
           <div
-            className=" h-[50px] w-[50px] rounded-full font-bold text-white text-sm bg-[#ff3737] mx-7 flex justify-center items-center"
+            className=" h-[50px] w-[50px] rounded-full font-bold text-white text-sm bg-[#ff3737] mx-7 flex justify-center items-center cursor-pointer"
             onClick={deleteMesa}
           >
             <FontAwesomeIcon icon={faTrashAlt} className="text-xl" />

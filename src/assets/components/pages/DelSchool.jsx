@@ -9,6 +9,8 @@ import axios from "axios";
 //components
 import School from "../cards/School";
 
+import NoFound from "../cards/NoFound";
+
 function DelSchool() {
   const [params, setParams] = useState("");
 
@@ -86,11 +88,7 @@ function DelSchool() {
                 />
               ))
             ) : (
-              <div className="w-full h-[50px] flex justify-center items-center bg-[#009EFF] rounded-md">
-                <h2 className="text-white text-lg font-bold">
-                  No hay votantes
-                </h2>
-              </div>
+              <NoFound prop="colegios electorales" />
             )}
           </div>
         </div>
