@@ -138,6 +138,7 @@ function AddVoter() {
                 </label>
                 <input
                   type="text"
+                  required
                   className="w-[430px] h-[50px] bg-[#E7E7E7] rounded-md focus:outline-none px-4 text-lg font-bold"
                   placeholder="Inserte el nombre del votante"
                   onChange={handleFirstName}
@@ -149,6 +150,7 @@ function AddVoter() {
                   Apellido del votante
                 </label>
                 <input
+                required
                   type="text"
                   className="w-[430px] h-[50px] bg-[#E7E7E7] rounded-md focus:outline-none px-4 text-lg font-bold"
                   placeholder="Apellido del votante"
@@ -159,6 +161,7 @@ function AddVoter() {
               <div className="flex flex-col my-5">
                 <label className="text-xl font-bold pl-3 ">Colegio</label>
                 <select
+                required
                   name=""
                   id=""
                   className="w-[430px] h-[50px] bg-[#E7E7E7] rounded-md focus:outline-none px-4 text-lg font-bold appa"
@@ -182,6 +185,7 @@ function AddVoter() {
                 </label>
                 <input
                   type="text"
+                  required
                   className="w-[430px] h-[50px] bg-[#E7E7E7] rounded-md focus:outline-none px-4 text-lg font-bold"
                   placeholder="Inserte el telefono del votante"
                   onChange={handlePhone}
@@ -194,6 +198,7 @@ function AddVoter() {
                 </label>
                 <input
                   type="text"
+                  required
                   className="w-[430px] h-[50px] bg-[#E7E7E7] rounded-md focus:outline-none px-4 text-lg font-bold"
                   placeholder="Inserte identificacion del votante"
                   onChange={handleIdentification}
@@ -203,7 +208,8 @@ function AddVoter() {
               <div className="flex flex-col my-5">
                 <label className="text-xl font-bold pl-3">Coordinador</label>
                 <select
-                  className="w-[430px] h-[50px] bg-[#E7E7E7] rounded-md focus:outline-none px-4 text-lg font-bold appa"
+                  className="w-[430px] h-[50px] bg-[#E7E7E7] rounded-md focus:outline-none px-4 text-lg font-bold"
+                  required
                   onChange={handleCoordinator}
                 >
                   <option value="">Coordinador</option>

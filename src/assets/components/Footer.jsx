@@ -8,12 +8,9 @@ function Footer() {
   return (
     <footer className="flex flex-col justify-center items-center bg-[#009EFF] w-full">
       <p className="text-white mt-5">Customer Relationship Management Service</p>
-
-
       
-
       <div className="flex justify-center items-center my-5">
-        <a href="https://www.linkedin.com/in/jose-martinez-dev/" target="_blank" rel="noreferrer">
+        <a href="https://do.linkedin.com/in/jos%C3%A9-miguel-martinez-florimon-b93768244" target="_blank" rel="noreferrer">
           <FontAwesomeIcon icon={faLinkedin} className="text-white text-2xl mx-2" />
         </a>
 
