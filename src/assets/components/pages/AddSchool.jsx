@@ -18,16 +18,11 @@ function AddSchool() {
 
   const [schoolName, setSchoolName] = useState("");
   const [schoolMesa, setSchoolMesa] = useState("");
-  const [toasthandler, setToastHandler] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     AddSchool();
-    if (toasthandler) {
-      success();
-    } else {
-      error();
-    }
+
     const form = document.getElementById("schoolForm");
     form.reset();
   };
@@ -50,13 +45,11 @@ function AddSchool() {
         }
       );
 
-      if (res.status === 200) {
-        setToastHandler(true);
-      } else {
-        setToastHandler(false);
-      }
-    } catch (error) {
-      console.log(error);
+      // console.log(res.data);
+      success();
+
+    } catch (err) {
+      console.log(err);
       error();
     }
   };

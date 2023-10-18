@@ -54,8 +54,8 @@ function DelCoordinator() {
 
   return (
     <>
-      <section className="w-full h-screen pt-16 flex justify-center">
-        <div className="w-full max-w-[1512px]">
+      <section className="w-full min-h-screen h-fit pt-16 flex justify-center">
+        <div className="w-full max-w-[1512px] ">
           <div className="w-full flex justify-between">
             <form onSubmit={handleSubmit}>
               <input

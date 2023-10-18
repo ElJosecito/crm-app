@@ -15,19 +15,19 @@ import toast, { Toaster } from "react-hot-toast";
 function AddCoordinator() {
 
   //hot toast
-  const success = () => toast.success(e);
-  const error = () => toast.error(e);
+  const success = () => toast.success('Coordinador agregado correctamente');
+  const error = () => toast.error('Error al agregar coordinador');
 
 
 
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
+  const [toasthandler, setToastHandler] = useState(false);
   //handle submit
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     postCoordinator();
 
     const form = document.getElementById("coordinatorForm");
@@ -37,7 +37,6 @@ function AddCoordinator() {
   //handle inputs
   const handleName = (e) => {
     setName(e.target.value);
-    success("Coordinador agregado correctamente");
   };
   const handleLastName = (e) => {
     setLastName(e.target.value);
@@ -58,15 +57,13 @@ function AddCoordinator() {
           phone: phone,
         }
       );
-
-      if (res.data.success) {
-        success("Coordinador agregado correctamente");
-      }
-
       
-    } catch (error) {
-      console.log(error);
-      error("Error al agregar el coordinador");
+      // console.log(res.data);
+      success();
+      
+    } catch (e) {
+      console.log(e);
+      error();
     }
   };
 

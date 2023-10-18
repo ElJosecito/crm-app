@@ -1,37 +1,47 @@
-import React from 'react'
+import React from "react";
 
 //icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 //axios
-import axios from 'axios'
+import axios from "axios";
 
 //config
-import { config } from '../../../config'
+import { config } from "../../../config";
 
+//hot toast
+import toast, { Toaster } from "react-hot-toast";
 
+function School({ name, mesa, id, getSchool }) {
+  //hot toast
+  const success = () =>
+    toast.success("Colegio electoral eliminado correctamente");
+  const error = () => toast.error("Error al eliminar colegio electoral");
 
-function School({name, mesa, id, getSchool}) {
+  const deleteMesa = async () => {
+    try {
+      const res = await axios.delete(
+        `${config.appConfig.host}:${config.appConfig.port}/api/schools/delete/${id}`
+      );
+      console.log(res);
+      getSchool();
 
-    const deleteMesa = async () => {
-        try {
-            const res = await axios.delete(
-                `${config.appConfig.host}:${config.appConfig.port}/api/schools/delete/${id}`
-            );
-            console.log(res);
-            getSchool();
-        } catch (error) {
-            console.log(error);
-        }
+      if (res.status == 200) {
+        success();
+      }
+    } catch (err) {
+      console.log(err);
+      error();
     }
+  };
 
   return (
     <>
       {/* coordinator */}
       <div className="h-[70px] w-fit flex items-center rounded-lg shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)] my-5 bg-white">
         <div className="flex justify-center items-center h-[50px] w-[50px] text-2xl text-white font-bold rounded-full bg-[#009EFF] mx-3">
-            {name[0]}
+          {name[0]}
         </div>
         {/* Votante */}
         <div className="flex flex-col min-w-96 border-r-2 border-[#A7A7A7] px-3">
@@ -56,8 +66,10 @@ function School({name, mesa, id, getSchool}) {
           </div>
         </div>
       </div>
+
+      <Toaster position="top-center" />
     </>
-  )
+  );
 }
 
-export default School
+export default School;

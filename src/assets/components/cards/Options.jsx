@@ -27,19 +27,19 @@ function Options() {
             </div>
             <a href="add">
               <button className="w-[400px] h-[50px] rounded-md font-bold text-white text-lg bg-[#009EFF]">
-                Add voter
+                Agregar votante
               </button>
             </a>
             {/*  */}
             <a href="addCoordinator">
               <button className="w-[400px] h-[50px] rounded-md font-bold text-white text-lg bg-[#009EFF]">
-                Add Coordinator
+                Agregar Coordinador
               </button>
             </a>
             {/*  */}
             <a href="addSchool">
               <button className="w-[400px] h-[50px] rounded-md font-bold text-white text-lg bg-[#009EFF]">
-                Add School
+                Agregar escuela
               </button>
             </a>
             {/*  */}
@@ -54,7 +54,7 @@ function Options() {
             {/*  */}
             <a href="delete-coordinator">
               <button className="w-[400px] h-[50px] rounded-md font-bold text-white text-lg bg-[#ff4b4b]">
-                Borrar Coordinator
+                Borrar Coordinador
               </button>
             </a>
             {/*  */}

@@ -8,12 +8,10 @@ import axios from "axios";
 
 //components
 import School from "../cards/School";
-
 import NoFound from "../cards/NoFound";
 
 function DelSchool() {
   const [params, setParams] = useState("");
-
   const [schools, setSchools] = useState([]);
 
   const getSchool = async () => {

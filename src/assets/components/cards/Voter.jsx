@@ -191,7 +191,7 @@ export function Voter({
         </div>
       </div>
 
-      <Toaster position="bottom-center" />
+      <Toaster position="top-center" />
     </>
   );
 }
@@ -370,7 +370,7 @@ export function UnVoteVoter({
         </div>
       </div>
 
-      <Toaster position="bottom-center" />
+      <Toaster position="top-center" />
     </>
   );
 }
@@ -549,7 +549,7 @@ export function DeleteVoter({
         </div>
       </div>
 
-      <Toaster position="bottom-center" />
+      <Toaster position="top-center" />
     </>
   );
 }

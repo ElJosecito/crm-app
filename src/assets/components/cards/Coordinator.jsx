@@ -10,17 +10,30 @@ import axios from "axios";
 //config
 import { config } from "../../../config";
 
+//hot toast
+import toast, { Toaster } from "react-hot-toast";
+
+
 function Coordinator({ firstName, lastName, phone, id, getCoordinator }) {
+
+    //hot toast
+    const success = () => toast.success('Coordinador eliminado correctamente');
+    const error = () => toast.error('Error al eliminar coordinador');
 
     const deleteCoordinator = async () => {
         try {
             const res = await axios.delete(
                 `${config.appConfig.host}:${config.appConfig.port}/api/coordinators/deleteCoordinator/${id}`
             );
-            console.log(res);
+            // console.log(res);
             getCoordinator();
-        } catch (error) {
-            console.log(error);
+
+            if (res.status === 200) {
+                success();
+            }
+        } catch (err) {
+            console.log(err);
+            error();
         }
     }
 
@@ -55,6 +68,8 @@ function Coordinator({ firstName, lastName, phone, id, getCoordinator }) {
           </div>
         </div>
       </div>
+
+      <Toaster position="top-center"/>
     </>
   );
 }

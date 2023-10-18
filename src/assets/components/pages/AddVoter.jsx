@@ -22,23 +22,14 @@ function AddVoter() {
   const [colegioId, setColegioId] = useState("");
   const [coordinatorId, setCoordinatorId] = useState("");
 
-
   //hot toast
   const success = () => toast.success("Votante agregado correctamente");
   const error = () => toast.error("Error al agregar votante");
 
-
   //funciones
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      await addVoter(data);
-      success();
-      // Aquí puedes realizar acciones adicionales después de agregar el votante, si es necesario.
-    } catch (error) {
-      console.log(error);
-      error();
-    }
+    addVoter();
 
     const form = document.getElementById("voterForm");
     form.reset();
@@ -57,10 +48,11 @@ function AddVoter() {
           coordinator: coordinatorId,
         }
       );
-      console.log(res.data);
-    } catch (error) {
-      console.log(error);
-      throw error; // Propagar el error para que pueda ser manejado en el bloque catch de handleSubmit
+      // console.log(res.data);
+      success();
+    } catch (err) {
+      console.log(err);
+      error();
     }
   };
 
@@ -122,115 +114,115 @@ function AddVoter() {
 
   return (
     <>
-    <section className="w-full h-screen pt-16 flex justify-center">
-      <div className="w-full max-w-[1512px] flex justify-center items-center">
-        <div>
-          <form
-            id="voterForm"
-            action="submit"
-            onSubmit={handleSubmit}
-            className="flex"
-          >
-            <div className="mx-5 flex flex-col">
-              <div className="flex flex-col my-5">
-                <label className="text-xl font-bold pl-3 ">
-                  Nombre del votante
-                </label>
-                <input
-                  type="text"
-                  required
-                  className="w-[430px] h-[50px] bg-[#E7E7E7] rounded-md focus:outline-none px-4 text-lg font-bold"
-                  placeholder="Inserte el nombre del votante"
-                  onChange={handleFirstName}
-                />
+      <section className="w-full h-screen pt-16 flex justify-center">
+        <div className="w-full max-w-[1512px] flex justify-center items-center">
+          <div>
+            <form
+              id="voterForm"
+              action="submit"
+              onSubmit={handleSubmit}
+              className="flex"
+            >
+              <div className="mx-5 flex flex-col">
+                <div className="flex flex-col my-5">
+                  <label className="text-xl font-bold pl-3 ">
+                    Nombre del votante
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    className="w-[430px] h-[50px] bg-[#E7E7E7] rounded-md focus:outline-none px-4 text-lg font-bold"
+                    placeholder="Inserte el nombre del votante"
+                    onChange={handleFirstName}
+                  />
+                </div>
+                {/*  */}
+                <div className="flex flex-col my-5">
+                  <label className="text-xl font-bold pl-3 ">
+                    Apellido del votante
+                  </label>
+                  <input
+                    required
+                    type="text"
+                    className="w-[430px] h-[50px] bg-[#E7E7E7] rounded-md focus:outline-none px-4 text-lg font-bold"
+                    placeholder="Apellido del votante"
+                    onChange={handleLastName}
+                  />
+                </div>
+                {/*  */}
+                <div className="flex flex-col my-5">
+                  <label className="text-xl font-bold pl-3 ">Colegio</label>
+                  <select
+                    required
+                    name=""
+                    id=""
+                    className="w-[430px] h-[50px] bg-[#E7E7E7] rounded-md focus:outline-none px-4 text-lg font-bold appa"
+                    onChange={handleColegio}
+                  >
+                    <option value="">Colegio</option>
+                    {colegio.map((colegio, index) => (
+                      <option key={index} value={colegio._id}>
+                        {`${colegio.name}, Mesa: ${colegio.mesa}`}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                {/*  */}
               </div>
-              {/*  */}
-              <div className="flex flex-col my-5">
-                <label className="text-xl font-bold pl-3 ">
-                  Apellido del votante
-                </label>
-                <input
-                required
-                  type="text"
-                  className="w-[430px] h-[50px] bg-[#E7E7E7] rounded-md focus:outline-none px-4 text-lg font-bold"
-                  placeholder="Apellido del votante"
-                  onChange={handleLastName}
-                />
+              <div className="mx-5 flex flex-col">
+                {/*  */}
+                <div className="flex flex-col my-5">
+                  <label className="text-xl font-bold pl-3 ">
+                    Numero de telefono
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    className="w-[430px] h-[50px] bg-[#E7E7E7] rounded-md focus:outline-none px-4 text-lg font-bold"
+                    placeholder="Inserte el telefono del votante"
+                    onChange={handlePhone}
+                  />
+                </div>
+                {/*  */}
+                <div className="flex flex-col my-5">
+                  <label className="text-xl font-bold pl-3 ">
+                    Cedula de identidad
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    className="w-[430px] h-[50px] bg-[#E7E7E7] rounded-md focus:outline-none px-4 text-lg font-bold"
+                    placeholder="Inserte identificacion del votante"
+                    onChange={handleIdentification}
+                  />
+                </div>
+                {/*  */}
+                <div className="flex flex-col my-5">
+                  <label className="text-xl font-bold pl-3">Coordinador</label>
+                  <select
+                    className="w-[430px] h-[50px] bg-[#E7E7E7] rounded-md focus:outline-none px-4 text-lg font-bold"
+                    required
+                    onChange={handleCoordinator}
+                  >
+                    <option value="">Coordinador</option>
+                    {coordinator.map((coordinator, index) => (
+                      <option key={index} value={coordinator._id}>
+                        {`${coordinator.firstName} ${coordinator.lastName}`}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                {/*  */}
+                <button className="w-[110px] h-[50px] rounded-md font-bold text-white text-lg bg-[#009EFF] self-end">
+                  enviar
+                </button>
               </div>
-              {/*  */}
-              <div className="flex flex-col my-5">
-                <label className="text-xl font-bold pl-3 ">Colegio</label>
-                <select
-                required
-                  name=""
-                  id=""
-                  className="w-[430px] h-[50px] bg-[#E7E7E7] rounded-md focus:outline-none px-4 text-lg font-bold appa"
-                  onChange={handleColegio}
-                >
-                  <option value="">Colegio</option>
-                  {colegio.map((colegio, index) => (
-                    <option key={index} value={colegio._id}>
-                      {`${colegio.name}, Mesa: ${colegio.mesa}`}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              {/*  */}
-            </div>
-            <div className="mx-5 flex flex-col">
-              {/*  */}
-              <div className="flex flex-col my-5">
-                <label className="text-xl font-bold pl-3 ">
-                  Numero de telefono
-                </label>
-                <input
-                  type="text"
-                  required
-                  className="w-[430px] h-[50px] bg-[#E7E7E7] rounded-md focus:outline-none px-4 text-lg font-bold"
-                  placeholder="Inserte el telefono del votante"
-                  onChange={handlePhone}
-                />
-              </div>
-              {/*  */}
-              <div className="flex flex-col my-5">
-                <label className="text-xl font-bold pl-3 ">
-                  Cedula de identidad
-                </label>
-                <input
-                  type="text"
-                  required
-                  className="w-[430px] h-[50px] bg-[#E7E7E7] rounded-md focus:outline-none px-4 text-lg font-bold"
-                  placeholder="Inserte identificacion del votante"
-                  onChange={handleIdentification}
-                />
-              </div>
-              {/*  */}
-              <div className="flex flex-col my-5">
-                <label className="text-xl font-bold pl-3">Coordinador</label>
-                <select
-                  className="w-[430px] h-[50px] bg-[#E7E7E7] rounded-md focus:outline-none px-4 text-lg font-bold"
-                  required
-                  onChange={handleCoordinator}
-                >
-                  <option value="">Coordinador</option>
-                  {coordinator.map((coordinator, index) => (
-                    <option key={index} value={coordinator._id}>
-                      {`${coordinator.firstName} ${coordinator.lastName}`}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              {/*  */}
-              <button className="w-[110px] h-[50px] rounded-md font-bold text-white text-lg bg-[#009EFF] self-end">
-                enviar
-              </button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <Toaster position="bottom-center" />
+      <Toaster position="top-center" />
     </>
   );
 }
