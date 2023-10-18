@@ -26,7 +26,7 @@ function Home() {
       );
       if (!params) {
         setVoters(res.data.data);
-        console.log(res.data.data);
+        // console.log(res.data.data);
       } else {
         const filter = res.data.data.filter((voter) => {
           
@@ -39,7 +39,7 @@ function Home() {
             
           );
 
-          console.log(a);
+          // console.log(a);
 
           return a;
         });
@@ -76,7 +76,7 @@ function Home() {
 
   return (
     <>
-      <section className="w-full h-screen pt-16 flex justify-center">
+      <section className="w-full min-h-screen h-fit pt-16 flex justify-center">
         <div className="w-full max-w-[1512px]">
           <div className="w-full flex justify-between">
             <form onSubmit={handleForm}>
