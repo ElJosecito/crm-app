@@ -9,6 +9,21 @@ function SeeInfo({ voter, coordinator }) {
     drawer.classList.add("hidden");
   };
 
+  const [voterName, setVoterName] = useState("");
+  const [coordinatorName, setCoordinatorName] = useState("");
+
+
+  useEffect(() => {
+    if (voter) {
+      setVoterName(voter.name);
+    }
+    if (coordinator) {
+      setCoordinatorName(coordinator.name);
+    }
+  }
+  , [voter, coordinator]);
+
+
   return (
     <div
       className="w-full h-screen bg-[#0000006f] fixed flex justify-center items-center top-0 z-20 hidden cursor-pointer"
@@ -28,7 +43,7 @@ function SeeInfo({ voter, coordinator }) {
         </div>
         <div className="h-[70px] w-fit flex items-center rounded-lg shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)] my-5 bg-white">
           <div className="flex justify-center items-center h-[50px] w-[50px] text-2xl text-white font-bold rounded-full bg-[#009EFF] mx-3">
-            J
+          {voterName && voterName[0]}
           </div>
           {/* Votante */}
           <div className="flex flex-col min-w-80 w-fit border-r-2 border-[#A7A7A7] px-3">
@@ -82,7 +97,7 @@ function SeeInfo({ voter, coordinator }) {
         {/* coordinator */}
         <div className="h-[70px] w-fit pr-10 flex items-center rounded-lg shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)] my-5 bg-white">
           <div className="flex justify-center items-center h-[50px] w-[50px] text-2xl text-white font-bold rounded-full bg-[#009EFF] mx-3">
-            J
+          {coordinatorName && coordinatorName[0]}
           </div>
           {/* Votante */}
           <div className="flex flex-col w-80 border-r-2 border-[#A7A7A7] px-3">

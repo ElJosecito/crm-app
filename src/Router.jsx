@@ -32,7 +32,7 @@ function Router() {
         <Route path="delete-school" element={<DelSchool />} />
         <Route path="delete-coordinator" element={<DelCoordinator />} />
         <Route path="about" element={<h1>About</h1>} />
-        <Route path="*" element={<NotFound404/>} />
+        <Route path="*" element={<NotFound404 />} />
       </Routes>
       <Footer />
     </>

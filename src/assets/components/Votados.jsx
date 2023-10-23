@@ -109,6 +109,7 @@ function Votados() {
                     coordLastName={voter.coordinator && voter.coordinator.lastName}
                     coordPhone={voter.coordinator && voter.coordinator.phone}
                     cole={voter.colegio && voter.colegio.mesa}
+                    coleName={voter.colegio && voter.colegio.name}
                     getLocalStorage={getLocalStorage}
                     getVoters={getVoters}
                   />
