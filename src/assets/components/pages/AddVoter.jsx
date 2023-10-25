@@ -117,6 +117,7 @@ function AddVoter() {
       <section className="w-full h-screen pt-16 flex justify-center">
         <div className="w-full max-w-[1512px] flex justify-center items-center">
           <div>
+            <h1 className="text-8xl font-bold w-full text-center pb-20 text-[#009EFF]">Agregar votante</h1>
             <form
               id="voterForm"
               action="submit"

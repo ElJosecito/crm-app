@@ -73,8 +73,10 @@ function AddCoordinator() {
   return (
     <>
       <section className="w-full h-screen pt-16 flex justify-center">
-      <div className="w-full max-w-[1512px] flex justify-center items-center">
-        <form action="submit" id="coordinatorForm" onSubmit={handleSubmit}>
+      <div className="w-full max-w-[1512px] flex flex-col justify-center items-center">
+      <h1 className="text-7xl font-bold w-full text-center pb-10 text-[#009EFF]">Agregar Coordinador</h1>
+       <div>
+       <form action="submit" id="coordinatorForm" onSubmit={handleSubmit}>
           <div className="mx-5 flex flex-col">
             <div className="flex flex-col my-5">
               <label className="text-xl font-bold pl-3 ">
@@ -120,6 +122,7 @@ function AddCoordinator() {
             </button>
           </div>
         </form>
+       </div>
       </div>
     </section>
 
