@@ -100,7 +100,7 @@ function Home() {
 
           <div className="w-full min-h-screen h-fit mt-10 ">
             {voters.length > 0 ? (
-              voters.map((voter, index) =>
+              voters.reverse().map((voter, index) =>
                 voter.voted ? null : (
                   <Voter
                     key={index}
