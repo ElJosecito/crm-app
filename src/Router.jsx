@@ -26,7 +26,7 @@ function Router() {
         <Route path="votados" element={<Votados />} />
         <Route path="add" element={<AddVoter />} />
         <Route path="addCoordinator" element={<AddCoordinator />} />
-        <Route path="addSchool" element={<AddSchool />} />
+        <Route path="add-cole" element={<AddSchool />} />
         <Route path="delete-voter" element={<DeleteVoterPage />} />
         <Route path="delete-school" element={<DelSchool />} />
         <Route path="delete-coordinator" element={<DelCoordinator />} />

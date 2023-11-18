@@ -36,7 +36,7 @@ function Options() {
               </button>
             </a>
             {/*  */}
-            <a href="addSchool">
+            <a href="add-cole">
               <button className="w-[400px] h-[50px] rounded-md font-bold text-white text-lg bg-[#009EFF]">
                 Agregar escuela
               </button>
