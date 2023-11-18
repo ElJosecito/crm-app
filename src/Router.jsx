@@ -9,7 +9,7 @@ import Home from "./assets/components/Home";
 
 import Votados from "./assets/components/Votados";
 import AddVoter from "./assets/components/pages/AddVoter";
-import AddCoordinator from "./assets/components/pages/addCoordinator";
+import AddCoordinator from "./assets/components/pages/AddCordinator";
 import DeleteVoterPage from "./assets/components/DeleteVoterPage";
 import AddSchool from "./assets/components/pages/AddSchool";
 import DelCoordinator from "./assets/components/pages/DelCoordinator";
