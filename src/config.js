@@ -1,8 +1,11 @@
-export const config = {
-    appConfig : {
-        port: '//crm-political-api.onrender.com',
-        host: 'http'
-    }
-}
 
-//https://crm-political-api.onrender.com/api/voters/getAllWithCoordinator
+
+
+export const config = {
+  appConfig: {
+    port: import.meta.env.VITE_API_PORT,
+    host: import.meta.env.VITE_API_HOST
+  },
+};
+
+//https://crm-political-api.onrender.com
