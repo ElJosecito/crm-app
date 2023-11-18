@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 //axios
 
@@ -23,7 +23,6 @@ function AddCoordinator() {
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
-  const [toasthandler, setToastHandler] = useState(false);
   //handle submit
 
   const handleSubmit = (e) => {
@@ -58,7 +57,7 @@ function AddCoordinator() {
         }
       );
       
-      // console.log(res.data);
+      console.log(res.data);
       success();
       
     } catch (e) {
